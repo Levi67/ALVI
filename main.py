@@ -1,10 +1,12 @@
 from blessed import Terminal
-import time
+import time#
+import os
 
 from algo import bubbleSort
 
 term = Terminal()
 
+default_data_string = "52, 75, 34, 98, 41, 12, 64, 56, 87, 90, 13, 61, 47, 24, 76, 18, 33, 56, 89, 49, 26, 63, 58, 35, 73, 81, 65, 70, 22, 11, 28,"
 
 
 
@@ -13,12 +15,18 @@ print("1 For file input in data.txt, 2 for term input")
 DataInput = input()
 
 if DataInput == "1":
+
+    if not os.path.exists("data.txt"):
+        with open("data.txt", 'w') as f:
+            f.write(default_data_string)
+
     Data = open("data.txt").read()
+
 
 elif DataInput == "2":
     print("Whats ur data")
     Data = input()
-
+ 
 else:
     print("No corresponding value entered")
 
@@ -31,13 +39,15 @@ print(f"Your data is: {DataSet}")
 print("Which algorithm do you want, Bubble sort: 1; ")
 Algorithm = input()
 
-print("--------------------------")
-
 
 
 if Algorithm == "1":
-
+    
     bubbleSort(DataSet, term)
+
+else:
+    print("No valid algorithm chosen, abord")
+    print("!!! Output will be the same as input !!!")
 
 time.sleep(1)
                 
