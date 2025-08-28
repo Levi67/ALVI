@@ -72,4 +72,4 @@ def bubbleSort(DataSet: list, term):
 
             time.sleep(0.02)
 
-        time.sleep(0.2) 
+        #time.sleep(0.2) 
