@@ -12,7 +12,7 @@ def printData(DataSetOld: list, DataSetNew: list, term, first: bool = False):
             bar_height = int((DataSetNew[i] / max_value) * (term.height - 2))
             for z in range(bar_height):
                 with term.location(LocationPillarOne * (i + 1), term.height - bar_height - 1 + z):
-                    print(term.blue("#"))
+                    print(term.cornflowerblue("█"))
     else:
         for i in range(len(DataSetNew)):
             old_height = int((DataSetOld[i] / max_value) * (term.height - 2))
@@ -27,7 +27,7 @@ def printData(DataSetOld: list, DataSetNew: list, term, first: bool = False):
                 # Draw new bar
                 for z in range(new_height):
                     with term.location(LocationPillarOne * (i + 1), term.height - new_height - 1 + z):
-                        print(term.blue("#"))
+                        print(term.cornflowerblue("█"))
 
 
 
